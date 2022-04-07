@@ -14,7 +14,7 @@ export class TasksService {
   }
 
   findOne(id: number) {
-    return this.tasksRepo.findOneBy({ id });
+    return this.tasksRepo.findOne({ id });
   }
 
   create(body: any) {
@@ -26,7 +26,7 @@ export class TasksService {
   }
 
   async update(id: number, body: any) {
-    const task = await this.tasksRepo.findOneBy({ id });
+    const task = await this.tasksRepo.findOne({ id });
 
     this.tasksRepo.merge(task, body);
 
